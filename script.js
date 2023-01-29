@@ -10,7 +10,7 @@ function updateView() {
 const guessText = guessNumber == null ? '' : `Du tippet <b><span style="color:#b58900;">${guessNumber}</span></b>.<br><br>`;
 
 let isCorrectOrNotText =
-    guessNumber == null ? 'Skriv inn et tall og trykk på "Tipp" knappen.':
+    guessNumber == null ? 'Skriv et tall mellom 0 til 100':
     guessNumber == secretNumber ? '<b><span style="color:#4a9900;">Du har tippet riktig!</span></b>' :
     guessNumber < secretNumber ? '<span style="color:#dc322f;">Du har tippet for <b>lavt</b></span>.' :
     guessNumber > secretNumber ? '<span style="color:#dc322f;">Du har tippet for <b>høyt</b></span>.' :
@@ -34,9 +34,8 @@ let isCorrectOrNotText =
 
         <br><br>
         <input type="text" oninput="guessNumber = parseInt(this.value)"/> 
-        <button onclick="guess()">Tipp</button>
-
-        <button onclick="startGame()">Start på nytt</button>
+        <button onclick="guess()">Nytt tall</button>
+        <button onclick="startGame()">Spill på nytt</button>
     `;
 }
 
